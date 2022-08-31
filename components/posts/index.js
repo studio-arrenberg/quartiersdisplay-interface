@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, createElement, useRef } from "react";
 
 export default function Posts({ posts }) {
   // const [postIndex, setPostIndex] = useState(0);
   // const [post, setPost] = useState(posts[postIndex])
-  const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+  const renderHTML = (rawHTML) => createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
 
   return (
     <div>
