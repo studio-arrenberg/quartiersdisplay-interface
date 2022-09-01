@@ -1,5 +1,8 @@
-export default function Fallback() {
-    return (
-        <h1>Fallback</h1>
-    )
+export default function Fallback({ title, message }) {
+  return (
+    <>
+      <h1>{title}</h1>
+      <p>{message}</p>
+    </>
+  );
 }
