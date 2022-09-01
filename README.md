@@ -4,7 +4,7 @@ Interface for the Quartiersdisplay
 ## Stack
 
 **Core** React<br>
-**Dependencies** Nextjs, SWR, htmlparser2
+**Dependencies** Nextjs, SWR
 
 ## Setup
 

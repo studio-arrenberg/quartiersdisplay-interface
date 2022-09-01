@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import useSWR, { mutate } from "swr";
 import Posts from "/components/posts";
 import Fallback from "/components/fallback";
-import Link from "next/link";
 
 async function fetcher(url) {
   return window.fetch(url).then((res) => res.json());
@@ -41,17 +40,13 @@ export default function Home() {
     setLoad(false);
   }
 
-  if (!api_endpoint) return <Fallback />;
-  if (!data) return <Fallback />;
-  if (!events) return <Fallback />;
-  if (posts.length === 0) return <Fallback />;
+  if (!api_endpoint) return <Fallback title="Keine Daten" message="Kein API Endpoint Angegeben" />;
+  if (!data) return <Fallback title="Loading" message="Daten werden geladen" />;
+  if (!events) return <Fallback title="Events loading" message="Veranstaltungen werden geladen" />;
+  if (posts.length === 0) return <Fallback title="Keine Posts" message="Es gibt leider keine Posts" />;
 
   return (
     <div>
-      {/* <h1>{data.name}</h1>
-      <p>{data.description}</p>
-      <p>Location: {location ? location : null}</p> */}
-
         <Posts posts={posts} />
     </div>
   );
