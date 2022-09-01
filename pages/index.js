@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import useSWR, { mutate } from "swr";
 import Posts from "/components/posts";
 import Fallback from "/components/fallback";
+import Link from "next/link";
 
 async function fetcher(url) {
   return window.fetch(url).then((res) => res.json());
@@ -47,10 +48,11 @@ export default function Home() {
 
   return (
     <div>
-      <h1>{data.name}</h1>
+      {/* <h1>{data.name}</h1>
       <p>{data.description}</p>
-      <p>Location: {location ? location : null}</p>
-      <Posts posts={posts} />
+      <p>Location: {location ? location : null}</p> */}
+
+        <Posts posts={posts} />
     </div>
   );
 }
