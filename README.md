@@ -4,7 +4,7 @@ Interface for the Quartiersdisplay. This React instance runs locally on the disp
 ## Stack
 
 **Core** React<br>
-**Dependencies** Nextjs, SWR
+**Dependencies** Nextjs, SWR, dayjs
 
 ## Setup
 
@@ -25,7 +25,6 @@ Interface for the Quartiersdisplay. This React instance runs locally on the disp
 [
     "meta": {
         "name": "Example",
-        "location": "example",
         "slide_duration": 6000,
     },
     "content": [
@@ -33,13 +32,28 @@ Interface for the Quartiersdisplay. This React instance runs locally on the disp
             "title": "this is the title",
             "subtitle": "hello subtitle",
             "text": "hello text", // first priority
-            "content": "hello html and text", // second priority
+            "content": "<p>html and text</p>", // second priority
             "image": "http://url.de",
-            "author": "Author Name",
-            "eventDate": "2013-01-01T00:00:00Z",
+            "emoji": "✌️",
+            "author": "Mac Maximum",
+            "event_date": "2013-01-01",
+            "event_time": "13:00:00",
+            "event_end_time": "18:00:00",
             "type": "veranstaltung", // event, message, poll, ...
-            "createdOn": "2013-01-01T00:00:00",
-            "updatedOn": "2013-01-01T00:00:00",
+            "pool": [
+                {
+                    "title": "Erste Frage",
+                    "votes": 2,
+                    "percentage": 66,
+                    "total-votes": 3
+                },
+                {
+                    "title": "Zweite Frage",
+                    "votes": 1,
+                    "percentage": 33,
+                    "total-votes": 3
+                }
+            ]
         },
         {
             // ...

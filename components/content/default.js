@@ -1,4 +1,4 @@
-import { createElement } from "react"
+import { createElement } from "react";
 import Image from "next/image";
 
 export default function Default({ content }) {
