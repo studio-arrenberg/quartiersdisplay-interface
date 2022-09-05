@@ -6,7 +6,7 @@ export default function Umfragen({ content }) {
     createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML } });
 
   return (
-    <div className="w-[1600px] h-[301px] overflow-hidde relative">
+    <>
       <div className=" absolute top-0 h-full  flex">
         {content?.poll?.map((poll) => (
           <p>
@@ -19,6 +19,6 @@ export default function Umfragen({ content }) {
           </h2>
         </div>
       </div>
-    </div>
+    </>
   );
 }

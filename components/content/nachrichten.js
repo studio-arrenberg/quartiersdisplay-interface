@@ -6,7 +6,7 @@ export default function Nachrichten({ content }) {
     createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML } });
 
   return (
-    <div className="w-[1600px] h-[301px] overflow-hidden bg-black relative">
+    <>
       {content?.image && (
         <div className="w-full h-full opacity-30 relative">
           {/* <Image src={content.image} objectFit="cover" layout="fill" /> */}
@@ -26,6 +26,6 @@ export default function Nachrichten({ content }) {
           </h2>
         </div>
       </div>
-    </div>
+    </>
   );
 }

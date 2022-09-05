@@ -13,7 +13,7 @@ export default function Veranstaltungen({ content }) {
   const eventDay = dayjs(content.event_date).format("DD");
 
   return (
-    <div className="w-[1600px] h-[301px] overflow-hidden bg-black relative">
+    <>
       {content?.image && (
         <div className="w-full h-full opacity-30 relative">
           {/* <Image src={content.image} objectFit="cover" layout="fill" /> */}
@@ -38,6 +38,6 @@ export default function Veranstaltungen({ content }) {
           </h2>
         </div>
       </div>
-    </div>
+    </>
   );
 }

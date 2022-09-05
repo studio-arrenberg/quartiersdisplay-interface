@@ -17,9 +17,9 @@ export default function Home() {
 
   if (!api_endpoint)
     return (
-      <Fallback title="Keine Daten" message="Kein API Endpoint Angegeben" />
+      <Wrapper><Fallback title="Keine Daten" message="Kein API Endpoint Angegeben" /></Wrapper>
     );
-  if (!data) return <Fallback title="Loading" message="Daten werden geladen" />;
+  if (!data) return <Wrapper><Fallback title="Loading" message="Daten werden geladen" /></Wrapper>;
 
   return (
     <Wrapper location={location}>

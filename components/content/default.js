@@ -6,7 +6,7 @@ export default function Default({ content }) {
     createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML } });
 
   return (
-    <div className="w-[1600px] h-[301px] overflow-hidden bg-black relative">
+    <>
       <div className=" absolute top-0 h-full  flex">
         <div className="w-[301px] h-[301px] bg-white text-center">
           <h2 className="text-blue-500 pt-[0.6cm] text-[5.5cm] leading-[4cm] font-bold tracking-tighter">
@@ -19,6 +19,6 @@ export default function Default({ content }) {
           </h2>
         </div>
       </div>
-    </div>
+    </>
   );
 }
