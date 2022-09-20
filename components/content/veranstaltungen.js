@@ -36,34 +36,36 @@ export default function Veranstaltungen({  slideDuration, content }) {
           opacity: [0, 1, 1, 0] 
         }}
         transition={{ 
-          duration: 12,
+          duration: 20, //gesamte Dauer
           repeat: Infinity,
-          times: [0, 0.1, 0.9, 1]
+          times: [0, 0.1, 0.9, 1] 
         }}
       >
-
-
           
+            {/* Hintergrundbild */}
             {content?.image && (
               <div className="w-[1920px] h-[360px] opacity-30 relative">
                 <Image src={content.image} objectFit="cover" layout="fill" />
               </div>
             )}
 
+
+            
+            {/*  Day Container moves in and out*/}
             <motion.div
               animate={{ 
                 x: [-360, 0, 0, -360] 
               }}
               transition={{ 
                 delay: 1,
-                duration: 10,
+                duration: 18, 
                 repeatDelay: 2,
-                times: [0, 0.1, 0.9, 1],
+                times: [0, 0.05, 0.95, 1],
                 repeat: Infinity,
               }}
               className="absolute left-0 top-0 w-[360px] h-[360px] bg-white text-center text-blue-500"
             >
-              <h2 className=" pt-[1.4cm] mb-2 text-[6.6cm] leading-[4.5cm] font-bold tracking-tight">
+              <h2 className=" pt-[1cm] mb-2 text-[6.6cm] leading-[4.5cm] font-bold tracking-tight">
                 {eventDay}
               </h2>
               <span className=" text-[2.5cm] leading-[3cm]  tracking-tight">
@@ -71,43 +73,44 @@ export default function Veranstaltungen({  slideDuration, content }) {
               </span>
             </motion.div>
 
+
+          {/*  First Introduction - > Verantaltung, Uhrzeit + Metadaten*/}
           <motion.div
             animate={{ 
               y: [360, 0, 0, -360] 
             }}
             transition={{ 
               delay: 2,
-              duration: 3,
-              repeatDelay: 9,
+              duration: 9,
+              repeatDelay: 11,
               times: [0, 0.1, 0.9, 1],
               repeat: Infinity,
             }}
 
-            className="absolute top-0 left-[370px] flex flex-col justify-center h-[360px] w-[1800px]  ">
-              <h2 className="text-[4.1cm] leading-[4.5cm] text-white line-clamp-1 max-h-full tracking-tighter ">
+            className="absolute top-0 left-[400px] flex flex-col  justify-center h-[360px] w-[1450px] ">
+              <h2 className="text-[4.1cm] leading-[4.5cm] text-white max-h-full tracking-tighter ">
                 Veranstaltung um <span className="">{content.event_time}</span>
               </h2>
-              <p className="text-[1cm]">
-                {content?.title && renderHTML(content.author)}
+              <p className="text-[1.6cm] bg-white px-3 py-1 mt-4 mb-8 rounded-xl inline-flex self-start">
+                Veröffentlicht von {" "}<span className="text-blue-500 ml-2"> {content?.title && renderHTML(content.author)}</span>
               </p>
             </motion.div>
 
 
 
-
- 
+            {/*  Event title */}
             <motion.div
             animate={{ 
               y: [360, 0, 0, -360] 
             }}
             transition={{ 
-              delay: 6,
-              duration: 5,
-              repeatDelay: 7,
+              delay: 11,
+              duration: 8,
+              repeatDelay: 12,
               times: [0, 0.1, 0.9, 1],
               repeat: Infinity,
             }}
-            className="absolute  top-0 left-[370px] flex items-center h-[360px] w-[1560px]  ">
+            className="absolute  top-0 left-[400px] flex items-center h-[360px] w-[1450px]  ">
               <h2 className="text-[5.1cm] leading-[4.5cm] text-white line-clamp-2 max-h-full">
                 {content?.title && renderHTML(content.title)}
               </h2>

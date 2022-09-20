@@ -7,13 +7,6 @@ export default function Projekte({ content }) {
 
   return (
     <>
-      {content?.image && (
-        <div className="w-full h-full opacity-30 relative">
-          {/* <Image src={content.image} objectFit="cover" layout="fill" /> */}
-          <img src={content.image} />
-        </div>
-      )}
-
       <div className=" absolute top-0 h-full  flex">
         <div className="w-[301px] h-[301px] bg-white text-center">
           <h2 className="text-blue-500 pt-[0.6cm] text-[5.5cm] leading-[4cm] font-bold tracking-tighter">

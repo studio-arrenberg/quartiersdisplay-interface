@@ -7,7 +7,7 @@ import Default from "./default";
 
 export default function Content({ content, meta, mutate }) {
   // const SLIDE_DURATION = meta.slide_duration;
-  const SLIDE_DURATION = 12000;
+  const SLIDE_DURATION = 20000;
   const [contentIndex, setcontentIndex] = useState(0);
 
   // iterate posts
@@ -29,20 +29,20 @@ export default function Content({ content, meta, mutate }) {
 
   // Display content
   switch (content[contentIndex]?.type) {
-    case "veranstaltungen":
-      return <Veranstaltungen slideDuration={SLIDE_DURATION} content={content[contentIndex]} />;
-      break;
     case "nachrichten":
       return <Nachrichten content={content[contentIndex]} />;
       break;
-    // case "umfragen":
-    //   return <Umfragen content={content[contentIndex]} />;
-    //   break;
-    // case "projekte":
-    //   return <Projekte content={content[contentIndex]} />;
-    //   break;
-    // default:
-    //   return <Default content={content[contentIndex]} />;
-    //   break;
+    case "veranstaltungen":
+      return <Veranstaltungen slideDuration={SLIDE_DURATION} content={content[contentIndex]} />;
+      break;
+    case "umfragen":
+      return <Umfragen content={content[contentIndex]} />;
+      break;
+    case "projekte":
+      return <Projekte content={content[contentIndex]} />;
+      break;
+    default:
+      return <Default content={content[contentIndex]} />;
+      break;
   }
 }
