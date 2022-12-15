@@ -1,5 +1,14 @@
-import { createElement } from "react";
+import { createElement, useState, useEffect, useRef } from "react";
+import React from "react";
 import Image from "next/image";
+import * as dayjs from "dayjs";
+import { motion, AnimatePresence } from "framer-motion"
+import useCountdown from "@bradgarropy/use-countdown"
+import Router from "next/router";
+import TimingBar from "../ui/timingbar";
+import Header from "../ui/header";
+import ImageContainer from "../ui/image";
+
 
 export default function Projekte({ content }) {
   const renderHTML = (rawHTML) =>
@@ -7,18 +16,35 @@ export default function Projekte({ content }) {
 
   return (
     <>
-      <div className=" absolute top-0 h-full  flex">
-        <div className="w-[301px] h-[301px] bg-white text-center">
-          <h2 className="text-blue-500 pt-[0.6cm] text-[5.5cm] leading-[4cm] font-bold tracking-tighter">
-            {content.type}
-          </h2>
-        </div>
-        <div className="py-4 pl-8 flex items-center h-[301px] w-[1300px]  ">
-          <h2 className="text-[4cm] leading-[4cm] text-white line-clamp-2">
-            {content?.title && renderHTML(content.title)}
-          </h2>
-        </div>
-      </div>
+    
+      <Header contentType="Mach mit beim Projekt" content={content} />
+
+      <TimingBar  />
+    
+      <ImageContainer content={content}>
+
+      </ImageContainer>
+    
+      {/*  Event title */}
+      <motion.div
+        animate={{ 
+          y: [300, 0, 0, 300] 
+        }}
+        transition={{ 
+          delay: 1,
+          duration: 18,
+          times: [0, 0.1, 0.9, 1],
+        }}
+        className="absolute  top-[75px] left-[400px] leading-tight ">
+        
+        <h2 className="text-[150px] leading-[180px] tracking-tighter   w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block  ">
+          {content?.title && renderHTML(content.title)}
+        </h2>
+
+        <p className="text-[35px] font-light tracking-tight line-clamp-2  w-[1400px] ">
+          {content?.text && renderHTML(content.text)}
+        </p>
+      </motion.div> 
     </>
   );
 }

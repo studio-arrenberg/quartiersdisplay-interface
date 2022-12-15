@@ -1,38 +1,51 @@
-import { createElement } from "react"
-import Image from "next/image";
+import { createElement} from "react";
+import React from "react";
+import * as dayjs from "dayjs";
 import { motion, AnimatePresence } from "framer-motion"
+import TimingBar from "../ui/timingbar";
+import Header from "../ui/header";
+import ImageContainer from "../ui/image";
 
 
-export default function Nachrichten({ content }) {
+require("dayjs/locale/de"); // get locale data
+
+export default function Nachrichten({  slideDuration, content }) {
+
   const renderHTML = (rawHTML) =>
-    createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML } 
+  });
+
 
   return (
-    <motion.div
-      animate={{ 
-        opacity: [0, 1, 1, 0] 
-      }}
-      transition={{ 
-        duration: 20, //gesamte Dauer
-        repeat: Infinity,
-        times: [0, 0.1, 0.9, 1] 
-      }}
-    >
-      {/* Hintergrundbild */}
-      {content?.image && (
-        <div className="w-full h-[360px] opacity-30 relative">
-          <Image src={content.image} objectFit="cover" layout="fill" />
-        </div>
-      )}
+      <>
+        <Header contentType="Nachricht" content={content} />
 
-      <div className=" absolute top-0 left-0 right-0 h-full px-9 flex flex-col justify-center content-center items-center text-center">
-        <h2 className="text-[4cm] leading-[5cm] -mb-4 text-white whitespace-nowrap truncate w-full">
-          {content?.title && renderHTML(content.title)}
-        </h2>
-        <p className="text-[1.6cm] bg-white px-4 py-1 mt-6 mb-8  rounded-xl inline-flex self-center">
-          Neue Nachricht von {" "}<span className="text-blue-500 ml-2"> {content?.title && renderHTML(content.author)}</span>
-        </p>
-      </div>
-    </motion.div>
+        <TimingBar  />
+       
+        <ImageContainer content={content}>
+
+        </ImageContainer>
+      
+        {/*  Event title */}
+        <motion.div
+          animate={{ 
+            y: [300, 0, 0, 300] 
+          }}
+          transition={{ 
+            delay: 1,
+            duration: 18,
+            times: [0, 0.1, 0.9, 1],
+          }}
+          className="absolute  top-[75px] left-[400px] leading-tight ">
+          
+          <h2 className="text-[150px] leading-[180px] tracking-tighter   w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block  ">
+            {content?.title && renderHTML(content.title)}
+          </h2>
+
+          <p className="text-[35px] font-light tracking-tight line-clamp-2  w-[1400px] ">
+            {content?.text && renderHTML(content.text)}
+          </p>
+        </motion.div> 
+      </>
   );
 }

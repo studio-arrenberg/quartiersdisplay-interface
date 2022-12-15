@@ -8,16 +8,7 @@ export default function Default({ content }) {
   return (
     <>
       <div className=" absolute top-0 h-full  flex">
-        <div className="w-[301px] h-[301px] bg-white text-center">
-          <h2 className="text-blue-500 pt-[0.6cm] text-[5.5cm] leading-[4cm] font-bold tracking-tighter">
-            {content.type}
-          </h2>
-        </div>
-        <div className="py-4 pl-8 flex items-center h-[301px] w-[1300px]  ">
-          <h2 className="text-[4cm] leading-[4cm] text-white line-clamp-2">
-            {content?.title && renderHTML(content.title)}
-          </h2>
-        </div>
+        Default
       </div>
     </>
   );

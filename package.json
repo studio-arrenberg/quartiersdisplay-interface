@@ -9,11 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@bradgarropy/use-countdown": "^1.5.2",
     "dayjs": "^1.11.5",
     "framer-motion": "^7.3.5",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
     "swr": "1.1.2"
   },
   "devDependencies": {
