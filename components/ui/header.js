@@ -16,8 +16,6 @@ const renderHTML = (rawHTML) =>
 export default function Header({contentType, content}) {
 
 
-
-
     const emoji = require("emoji-dictionary");
 
     let emojiName = emoji.getName(content.emoji);
@@ -105,7 +103,7 @@ export default function Header({contentType, content}) {
                 {emojiName && <Emoji emoji={emojiName} size="40"/>}
                  
                 </div>
-                </div>
+            </div>
         </motion.div>
             
     )

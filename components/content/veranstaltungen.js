@@ -12,7 +12,7 @@ import ImageContainer from "../ui/image";
 
 require("dayjs/locale/de"); // get locale data
 
-export default function Veranstaltungen({  slideDuration, content }) {
+export default function Veranstaltungen({  slideDuration, content, state}) {
 
   dayjs.locale("de");
 
@@ -24,11 +24,15 @@ export default function Veranstaltungen({  slideDuration, content }) {
   const eventTime = content.event_time
   const eventWeekday = dayjs(content.event_date).format("dddd");
 
+  const [visible, setVisible] = useState({state});
+
 
 
 
   return (
       <>
+
+      
     
         <Header contentType="Veranstaltung" content={content} />
 
@@ -52,6 +56,8 @@ export default function Veranstaltungen({  slideDuration, content }) {
         </ImageContainer>
       
         {/*  Event title */}
+
+        {state && (
         <motion.div
           animate={{ 
             y: [300, 0, 0, 300] 
@@ -71,6 +77,7 @@ export default function Veranstaltungen({  slideDuration, content }) {
             {content?.text && renderHTML(content.text)}
           </p>
         </motion.div> 
+        )}
       </>
   );
 }

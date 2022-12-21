@@ -11,6 +11,7 @@ export default function ImageContainer({ content, children}) {
             x: [-360, 0, 0, -360]
           }}
           transition={{ 
+            delay: 1,
             duration: 19, 
             times: [0, 0.05, 0.95, 1],
           }}
