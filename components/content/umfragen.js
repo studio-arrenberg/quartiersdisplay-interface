@@ -8,8 +8,8 @@ export default function Umfragen({ content }) {
   return (
     <>
       <div className=" absolute top-0 h-full  flex">
-        {content?.poll?.map((poll) => (
-          <p>
+        {content?.poll?.map((poll, i) => (
+          <p key={i}>
             {poll.title} • {poll.votes} votes • {poll.percentage}%{" "}
           </p>
         ))}

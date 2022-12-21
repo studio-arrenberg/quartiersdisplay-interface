@@ -14,7 +14,7 @@ export default function ImageContainer({ content, children}) {
             duration: 19, 
             times: [0, 0.05, 0.95, 1],
           }}
-          className="absolute left-0 top-[5px] w-[355px] h-[355px]   text-center text-white overflow-hidden"
+          className="absolute left-0 top-[10px] w-[350px] h-[350px]   text-center text-white overflow-hidden"
         >
 
           {/* Hintergrundbild */}
@@ -30,7 +30,7 @@ export default function ImageContainer({ content, children}) {
                 }}
                 className="absolute left-0 top-[5px] w-[355px] h-[355px]   text-center text-white "
               >
-                <Image src={content.image} objectFit="cover" layout="fill" className=" " />
+                <Image src={content.image} objectFit="cover" layout="fill" className=" " alt=" " />
               </motion.div>
             )}
           </div>

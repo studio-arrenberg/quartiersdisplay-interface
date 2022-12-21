@@ -12,7 +12,7 @@ export default function TimingBar() {
                 duration: 18, 
                 ease: "linear",
               }}
-              className="absolute top-[0px] h-[5px] bg-blue-500"
+              className="absolute top-[0px] h-[10px] bg-blue-500"
             />
             
     )
