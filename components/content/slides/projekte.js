@@ -1,27 +1,26 @@
-import { createElement} from "react";
+import { createElement, useState, useEffect, useRef } from "react";
 import React from "react";
+import Image from "next/image";
 import * as dayjs from "dayjs";
 import { motion, AnimatePresence } from "framer-motion"
-import TimingBar from "../ui/timingbar";
-import Header from "../ui/header";
-import ImageContainer from "../ui/image";
+import useCountdown from "@bradgarropy/use-countdown"
+import Router from "next/router";
+import TimingBar from "../../ui/timingbar";
+import Header from "../../ui/header";
+import ImageContainer from "../../ui/image";
 
 
-require("dayjs/locale/de"); // get locale data
 
-export default function Nachrichten({  slideDuration, content }) {
-
+export default function Projekte({ content, state }) {
   const renderHTML = (rawHTML) =>
-    createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML } 
-  });
-
+    createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML } });
 
   return (
-      <>
-        <Header contentType="Nachricht" content={content} />
-
+    <>
+      {state && (
+        <>
+        <Header contentType="Mach mit beim Projekt" content={content} state={state} />
         <TimingBar  />
-       
         <ImageContainer content={content}>
 
         </ImageContainer>
@@ -47,5 +46,7 @@ export default function Nachrichten({  slideDuration, content }) {
           </p>
         </motion.div> 
       </>
+      )}
+    </>
   );
 }

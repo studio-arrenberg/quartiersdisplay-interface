@@ -6,7 +6,6 @@ import Switch from "./switch";
 
 
 export default function Content({ content, meta, mutate }) {
-  // const slideDuration = meta.slide_duration;;
   const slideDuration = 20000;
   const [contentIndex, setContentIndex] = useState(0);
   const timer = useRef(null); // we can save timer in useRef and pass it to child
@@ -32,8 +31,6 @@ export default function Content({ content, meta, mutate }) {
           <Switch  content={content} contentIndex={contentIndex} index={index} state={index == contentIndex ? true : false } />
         </div>
       ))}
-
-      {/* <Child counter={counter} currentTimer={timer.current} /> */}
 
       <h2 className=" fixed top-[600px] left-20 text-4xl text-black">
          <button className="bg-white dark:bg-black text-black dark:text-white px-6 py-4 mt-4 rounded-lg mr-2" onClick={() => setContentIndex((i) => i + 1)}>Next</button>

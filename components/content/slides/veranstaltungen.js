@@ -5,9 +5,10 @@ import * as dayjs from "dayjs";
 import { motion, AnimatePresence } from "framer-motion"
 import useCountdown from "@bradgarropy/use-countdown"
 import Router from "next/router";
-import TimingBar from "../ui/timingbar";
-import Header from "../ui/header";
-import ImageContainer from "../ui/image";
+import TimingBar from "../../ui/timingbar";
+import Header from "../../ui/header";
+import ImageContainer from "../../ui/image";
+
 
 
 require("dayjs/locale/de"); // get locale data

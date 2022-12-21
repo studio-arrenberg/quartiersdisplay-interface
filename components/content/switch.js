@@ -1,10 +1,10 @@
 import { createElement} from "react";
 
-import Veranstaltungen from "./veranstaltungen";
-import Nachrichten from "./nachrichten";
-import Umfragen from "./umfragen";
-import Projekte from "./projekte";
-import Default from "./default";
+import Veranstaltungen from "./slides/veranstaltungen";
+import Nachrichten from "./slides/nachrichten";
+import Umfragen from "./slides/umfragen";
+import Projekte from "./slides/projekte";
+import Default from "./slides/default";
 
 
 export default function Switch({ content, contentIndex, state, index }) {
