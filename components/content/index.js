@@ -10,17 +10,21 @@ export default function Content({ content, meta, mutate }) {
   const [contentIndex, setContentIndex] = useState(0);
   const timer = useRef(null); // we can save timer in useRef and pass it to child
 
+
+  if (contentIndex > content.length - 1) {
+    setContentIndex(0);
+    mutate();
+  }
+
   useEffect(() => {
-    timer.current = setInterval(
-      () => {
-        setContentIndex((v) => v + 1)
-        mutate()
-      },
+    console. log("useEffect");
+    let id = setInterval(
+      () => {setContentIndex(contentIndex => contentIndex + 1)},
       slideDuration);
 
       // clear on component unmount
       return () => {
-        clearInterval(timer.current);
+        clearInterval(id);
       };
     }, []);
 
@@ -32,10 +36,11 @@ export default function Content({ content, meta, mutate }) {
         </div>
       ))}
 
-      <h2 className=" fixed top-[600px] left-20 text-4xl text-black">
+      <div className=" fixed top-[600px] left-10 text-4xl text-black flex items-baseline">
+          <div className="mr-10">ContentIndex: {contentIndex}</div>
          <button className="bg-white dark:bg-black text-black dark:text-white px-6 py-4 mt-4 rounded-lg mr-2" onClick={() => setContentIndex((i) => i + 1)}>Next</button>
           <button className="bg-white dark:bg-black text-black dark:text-white px-6 py-4 mt-4 rounded-lg"  onClick={() => document.documentElement.classList.toggle("dark")}>Toggle Dark Mode</button>
-       </h2>
+       </div>
     </div>
   );
 }

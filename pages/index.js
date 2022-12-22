@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from "react";
 import useSWR, { mutate } from "swr";
 import Content from "/components/content/index.js";
 import Fallback from "/components/fallback";
 import Wrapper from "/components/wrapper";
+
+
 
 async function fetcher(url) {
   return window.fetch(url).then((res) => res.json());
@@ -11,6 +12,7 @@ async function fetcher(url) {
 export default function Home() {
   const location = process.env.NEXT_PUBLIC_LOCATION_STRING;
   const api_endpoint = process.env.NEXT_PUBLIC_QUARTIERSPLATTFORM_API_ENDPOINT;
+
   const { data, mutate } = useSWR(api_endpoint ? api_endpoint : null, fetcher);
 
   console.log("data", data);
