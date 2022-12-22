@@ -1,9 +1,6 @@
 import { createElement } from "react";
 import { motion } from "framer-motion";
 import { IoMegaphoneOutline, IoCalendarOutline, IoChatbubbleOutline, IoHeartOutline  } from "react-icons/io5";
-// import React from "react";
-// import { EmojiProvider, Emoji } from "react-apple-emojis";
-// import emojiData from "react-apple-emojis/src/data.json" ;
 
 import Emoji from 'react-emojis';
 
@@ -70,7 +67,7 @@ export default function Header({contentType, content}) {
                 ease: "easeInOut",
             }}
         >
-            <div className="absolute top-[25px] left-[400px] w-[1500px]  text-[35px]   font-light flex items-center  max-h-[50px] ">
+            <div className="absolute top-[15px] left-[400px] w-[1500px]  text-[35px]   font-light flex items-center  max-h-[50px] ">
                 {content.type === "nachrichten" && (
                     <>
                         <IoMegaphoneOutline className="inline-block mr-2 stroke-custom" />
