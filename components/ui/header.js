@@ -16,8 +16,6 @@ const renderHTML = (rawHTML) =>
 export default function Header({contentType, content}) {
 
 
-
-
     const emoji = require("emoji-dictionary");
 
     let emojiName = emoji.getName(content.emoji);
@@ -62,7 +60,6 @@ export default function Header({contentType, content}) {
 
     
     return (
-          
         <motion.div
             animate={{
                 y: [-100, 0, 0, -100],
@@ -73,7 +70,7 @@ export default function Header({contentType, content}) {
                 ease: "easeInOut",
             }}
         >
-            <div className="absolute top-[25px] left-[400px] w-[1500px]  text-[35px]   font-light flex items-center">
+            <div className="absolute top-[25px] left-[400px] w-[1500px]  text-[35px]   font-light flex items-center  max-h-[50px] ">
                 {content.type === "nachrichten" && (
                     <>
                         <IoMegaphoneOutline className="inline-block mr-2 stroke-custom" />
@@ -82,7 +79,7 @@ export default function Header({contentType, content}) {
                 )}
                 {content.type === "projekte" && (
                     <>
-                        <IoHeartOutline className="inline-block mr-2 stroke-custom" />
+                        <IoHeartOutline className="inline-block mr-2 stroke-custom " />
                         <span className="font-bold mr-2">Mach mit beim Projekt</span> 
                     </>
                 )}
@@ -100,12 +97,14 @@ export default function Header({contentType, content}) {
                 )}
             
                 <span>von {content?.title && renderHTML(content.author)}</span>
-                <div className="font-bold ml-auto">{content?.project && renderHTML(content.project)}  
+                <div className="font-bold ml-auto max-w-[660px] overflow-hidden text-ellipsis">
+                
+                {content?.project && renderHTML(content.project)}  
 
                 {emojiName && <Emoji emoji={emojiName} size="40"/>}
                  
                 </div>
-                </div>
+            </div>
         </motion.div>
             
     )

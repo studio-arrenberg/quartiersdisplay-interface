@@ -2,9 +2,9 @@ import { createElement} from "react";
 import React from "react";
 import * as dayjs from "dayjs";
 import { motion, AnimatePresence } from "framer-motion"
-import TimingBar from "../ui/timingbar";
-import Header from "../ui/header";
-import ImageContainer from "../ui/image";
+import TimingBar from "../../ui/timingbar";
+import Header from "../../ui/header";
+import ImageContainer from "../../ui/image";
 
 
 require("dayjs/locale/de"); // get locale data
