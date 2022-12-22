@@ -4,18 +4,21 @@ export default function TimingBar({state}) {
 
     return (
         <>
-          <div className="absolute top-[0px] h-[10px] w-full  bg-blue-100" />
+          <div className="absolute top-[0px] h-[10px] w-full  bg-blue-100 " />
           <motion.div
               animate={{ 
-                width: ["0%", "100%"],
+                translateX: ["-100%", "100%"],
                 backgroundColor: ["hsl(205,100,40)", "hsl(205,100,50)"],
               }}
               transition={{ 
-                duration: 20, 
+                duration: 40, 
                 ease: "linear",
+                repeat: Infinity,
               }}
-              className="absolute top-[0px] h-[10px] bg-blue-500"
+              className="absolute top-[0px] h-[10px] bg-blue-500 w-full z-10"
             />
+
+           
         </> 
     )
 }

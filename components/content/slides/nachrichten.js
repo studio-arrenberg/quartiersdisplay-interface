@@ -20,7 +20,7 @@ export default function Nachrichten({  slideDuration, content }) {
       <>
         <Header contentType="Nachricht" content={content} />
 
-        <TimingBar  />
+        {/* <TimingBar  /> */}
        
         <ImageContainer content={content}>
 

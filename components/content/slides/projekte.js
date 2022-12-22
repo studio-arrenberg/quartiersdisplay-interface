@@ -20,7 +20,7 @@ export default function Projekte({ content, state }) {
       {state && (
         <>
         <Header contentType="Mach mit beim Projekt" content={content} state={state} />
-        <TimingBar  />
+        {/* <TimingBar  /> */}
         <ImageContainer content={content}>
 
         </ImageContainer>
@@ -32,12 +32,12 @@ export default function Projekte({ content, state }) {
           }}
           transition={{ 
             delay: 1,
-            duration: 18,
+            duration: 19,
             times: [0, 0.1, 0.9, 1],
           }}
           className="absolute  top-[75px] left-[400px] leading-tight ">
           
-          <h2 className="text-[150px] leading-[180px] tracking-tighter   w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block  ">
+          <h2 className="text-[150px] leading-[180px] tracking-tighter  font-light w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block  ">
             {content?.title && renderHTML(content.title)}
           </h2>
 

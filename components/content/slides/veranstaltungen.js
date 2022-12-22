@@ -37,7 +37,7 @@ export default function Veranstaltungen({  slideDuration, content, state}) {
     
         <Header contentType="Veranstaltung" content={content} />
 
-        <TimingBar  />
+        {/* <TimingBar  /> */}
        
         <ImageContainer content={content}>
           
