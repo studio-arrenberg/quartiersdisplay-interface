@@ -14,7 +14,7 @@ export default function Umfragen({ content }) {
           </p>
         ))}
         <div className="py-4 pl-8 flex items-center h-[301px] w-[1300px]  ">
-          <h2 className="text-[4cm] leading-[4cm] text-white line-clamp-2">
+          <h2 className="text-[150px] leading-[180px] tracking-tighter  font-light w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block  ">
             {content?.title && renderHTML(content.title)}
           </h2>
         </div>
