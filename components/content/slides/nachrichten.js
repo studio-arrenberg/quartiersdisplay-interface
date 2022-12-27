@@ -36,7 +36,7 @@ export default function Nachrichten({  slideDuration, content }) {
             duration: 18,
             times: [0, 0.1, 0.9, 1],
           }}
-          className="absolute  top-[60px] left-[400px] leading-tight ">
+          className="absolute  top-[70px] left-[400px] leading-tight ">
           
           <h2 className="text-[150px] leading-[180px] tracking-tighter  font-light w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block  ">
             {content?.title && renderHTML(content.title)}

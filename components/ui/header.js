@@ -86,20 +86,23 @@ export default function Header({contentType, content}) {
                         <span className="font-bold mr-2">Veranstaltung</span> 
                     </>
                 )}
-                    {content.type === "umfragen" && (
+                {content.type === "umfragen" && (
                     <>
                         <IoChatbubbleOutline className="inline-block mr-2 stroke-custom" />
                         <span className="font-bold mr-2">Veranstaltung</span> 
                     </>
                 )}
+
+
+        
             
                 <span>von {content?.title && renderHTML(content.author)}</span>
                 <div className="font-bold ml-auto max-w-[660px] overflow-hidden text-ellipsis">
                 
-                {content?.project && renderHTML(content.project)}  
+                    {content?.project && renderHTML(content.project)}  
 
-                {emojiName && <Emoji emoji={emojiName} size="40"/>}
-                 
+                    {emojiName && <Emoji emoji={emojiName} size="40"/>}
+                    
                 </div>
             </div>
         </motion.div>

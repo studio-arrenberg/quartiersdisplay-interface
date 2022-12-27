@@ -5,7 +5,8 @@ import Nachrichten from "./slides/nachrichten";
 import Umfragen from "./slides/umfragen";
 import Projekte from "./slides/projekte";
 import Default from "./slides/default";
-
+import Energiewetter from "./slides/energiewetter";
+import Info from "./slides/info";
 
 export default function Switch({ content, contentIndex, state, index }) {
 
@@ -36,6 +37,12 @@ export default function Switch({ content, contentIndex, state, index }) {
         break;
       case "projekte":
         return <Projekte content={content} state={state} />;
+        break;
+      case "energie_wetter":
+        return <Energiewetter content={content} state={state} />;
+        break;
+      case "info":
+        return <Info content={content} state={state} />;
         break;
       default:
         return <Default content={content} state={state} />;

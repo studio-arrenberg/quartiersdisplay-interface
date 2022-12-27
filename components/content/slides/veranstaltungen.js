@@ -22,7 +22,9 @@ export default function Veranstaltungen({  slideDuration, content, state}) {
   });
 
   const eventDate = dayjs(content.event_date).format("DD.MM");
-  const eventTime = content.event_time
+  
+  const eventTime = dayjs(content.event_date).format("HH:mm");
+  
   const eventWeekday = dayjs(content.event_date).format("dddd");
 
   const [visible, setVisible] = useState({state});
@@ -40,7 +42,6 @@ export default function Veranstaltungen({  slideDuration, content, state}) {
         {/* <TimingBar  /> */}
        
         <ImageContainer content={content}>
-          
           {/*  Day Container */}
           <div className="absolute top-0 left-0 w-full h-full backdrop-blur-sm bg-black/50">
             <h2 className=" pt-[30px]  text-[35px]  font-bold tracking-tight">
@@ -53,7 +54,6 @@ export default function Veranstaltungen({  slideDuration, content, state}) {
               {eventTime}
             </span>
           </div>
-
         </ImageContainer>
       
         {/*  Event title */}
@@ -67,7 +67,7 @@ export default function Veranstaltungen({  slideDuration, content, state}) {
               duration: 18,
               times: [0, 0.1, 0.9, 1],
             }}
-            className={`{ ${content?.image ? "" : ""} absolute  top-[60px] left-[400px] leading-tight }`}>
+            className={`{ ${content?.image ? "" : ""} absolute  top-[70px] left-[400px] leading-tight }`}>
             
             <h2 className="text-[150px] leading-[180px] tracking-tighter  font-light w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block  ">
               {content?.title && renderHTML(content.title)}
