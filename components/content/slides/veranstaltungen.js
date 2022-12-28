@@ -1,11 +1,7 @@
 import { createElement, useState, useEffect, useRef } from "react";
 import React from "react";
-import Image from "next/image";
 import * as dayjs from "dayjs";
 import { motion, AnimatePresence } from "framer-motion"
-import useCountdown from "@bradgarropy/use-countdown"
-import Router from "next/router";
-import TimingBar from "../../ui/timingbar";
 import Header from "../../ui/header";
 import ImageContainer from "../../ui/image";
 
@@ -22,21 +18,10 @@ export default function Veranstaltungen({  slideDuration, content, state}) {
   });
 
   const eventDate = dayjs(content.event_date).format("DD.MM");
-  
-  const eventTime = dayjs(content.event_date).format("HH:mm");
-  
   const eventWeekday = dayjs(content.event_date).format("dddd");
-
-  const [visible, setVisible] = useState({state});
-
-
-
 
   return (
       <>
-
-      
-    
         <Header contentType="Veranstaltung" content={content} />
 
         {/* <TimingBar  /> */}
@@ -51,7 +36,7 @@ export default function Veranstaltungen({  slideDuration, content, state}) {
               {eventDate}
             </h2>
             <span className=" text-[35px] leading-[3cm]  tracking-tight">
-              {eventTime}
+              {content.event_time}
             </span>
           </div>
         </ImageContainer>
@@ -77,8 +62,6 @@ export default function Veranstaltungen({  slideDuration, content, state}) {
               {content?.text && renderHTML(content.text)}
             </p>
           </motion.div> 
-          
-        
       </>
   );
 }

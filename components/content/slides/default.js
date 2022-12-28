@@ -1,5 +1,4 @@
 import { createElement } from "react";
-import Image from "next/image";
 
 export default function Default({ content }) {
   const renderHTML = (rawHTML) =>
@@ -9,6 +8,9 @@ export default function Default({ content }) {
     <>
       <div className=" absolute top-0 h-full  flex">
         Default
+        <p className="text-[45px] font-light tracking-tight  ">
+            {content?.subtitle && renderHTML(content.subtitle)}
+          </p>
       </div>
     </>
   );

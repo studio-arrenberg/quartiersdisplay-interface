@@ -33,8 +33,9 @@ export default function Info({ content, state }) {
             className="absolute w-full top-[45px]  leading-tight text-center">
             
             <h2 className="text-[75px] leading-[180px] tracking-tighter   whitespace-nowrap  overflow-ellipsis overflow-hidden  block  ">
-            Entdecke dein Quartier & partizipiere bei spannenden Projekten
+            {content?.title}
             </h2>
+            <p>{content?.subtitle}</p>
           </motion.div> 
 
 
@@ -50,7 +51,7 @@ export default function Info({ content, state }) {
             }}
             className="absolute w-full bottom-[60px]  leading-tight text-center flex justify-center" >
             <p className="text-[55px] font-light span bg-blue-500 rounded-xl px-6 pt-1.5 pb-2.5">
-              www.arrenberg.de
+            {content?.link}
             </p>
           </motion.div>
 

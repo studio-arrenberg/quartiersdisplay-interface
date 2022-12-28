@@ -1,9 +1,7 @@
-import useSWR, { mutate } from "swr";
 import useSWRImmutable from 'swr/immutable'
 import Content from "/components/content/index.js";
 import Fallback from "/components/fallback";
 import Wrapper from "/components/wrapper";
-
 
 async function fetcher(url) {
   return window.fetch(url).then((res) => res.json());

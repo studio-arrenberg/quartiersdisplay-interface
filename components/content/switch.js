@@ -1,5 +1,4 @@
 import { createElement} from "react";
-
 import Veranstaltungen from "./slides/veranstaltungen";
 import Nachrichten from "./slides/nachrichten";
 import Umfragen from "./slides/umfragen";

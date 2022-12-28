@@ -128,11 +128,11 @@ const fadeVariants = {
           className="absolute  left-[400px] top-[70px]  leading-tight ">
           
           <h2 className="text-[110px] leading-[180px] tracking-tighter  font-light w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block  ">
-          {content?.text && renderHTML(content.subtitle)} Phase <span className="font-light"> – 474g CO2 pro kWh</span>
+          {content?.content.label.plural} Phase
           </h2>
 
           <p className="text-[35px] font-light tracking-tight line-clamp-2  w-[1400px] ">
-            {content?.text && renderHTML(content.text)}
+            <p>Emissionen: {content?.content.emissions.amount}  <span className="font-light">{content?.content.emissions.unit}</span></p>
           </p>
         </motion.div> 
       </>

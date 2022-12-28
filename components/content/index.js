@@ -14,7 +14,7 @@ export default function Content({ content, meta, mutate }) {
   document.documentElement.classList.add("dark");
 
 
-  if (contentIndex > content.length - 1) {
+  if (contentIndex > content.length - 1 || contentIndex < 0) {
     setContentIndex(0);
     mutate();
   }
@@ -40,11 +40,12 @@ export default function Content({ content, meta, mutate }) {
         </div>
       ))}
 
-      <div className=" fixed top-[600px] left-10 text-4xl text-black flex items-baseline">
+      <div className="z-40 fixed top-[600px] left-10 text-4xl text-black flex items-baseline">
           <div className="mr-10">ContentIndex: {contentIndex}</div>
-         {/* <button className="bg-white dark:bg-black text-black dark:text-white px-6 py-4 mt-4 rounded-lg mr-2" onClick={() => setContentIndex((i) => i + 1)}>Next</button> */}
           <button className="bg-white dark:bg-black text-black dark:text-white px-6 py-4 mt-4 rounded-lg"  onClick={() => document.documentElement.classList.toggle("dark")}>Toggle Dark Mode</button>
-       </div>
+          <button className="bg-white dark:bg-black text-black dark:text-white px-6 py-4 mt-4 rounded-lg"  onClick={() => setContentIndex(contentIndex - 1)}>Previous</button>
+          <button className="bg-white dark:bg-black text-black dark:text-white px-6 py-4 mt-4 rounded-lg"  onClick={() => setContentIndex(contentIndex + 1)}>Next</button>
+      </div>
     </div>
   );
 }
