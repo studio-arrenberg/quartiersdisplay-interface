@@ -40,7 +40,8 @@ export default function Projekte({ content, state }) {
         </h2>
 
         <p className="text-[35px] font-light tracking-tight line-clamp-2  w-[1400px] ">
-          {content?.text && renderHTML(content.text)}
+          {content?.subtitle && renderHTML(content.subtitle)}
+          {!content?.subtitle && content?.text && renderHTML(content.text)}
         </p>
       </motion.div> 
     </>

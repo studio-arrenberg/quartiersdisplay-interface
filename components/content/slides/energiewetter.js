@@ -7,12 +7,7 @@ import Header from "../../ui/header";
 import ImageContainer from "../../ui/image";
 import {  IoLeafOutline  } from "react-icons/io5";
 
-
-
 require("dayjs/locale/de"); // get locale data
-
-
-
 
 export default function Energiewetter({  slideDuration, content }) {
 
@@ -20,28 +15,16 @@ export default function Energiewetter({  slideDuration, content }) {
     createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML } 
   });
 
-
-
-const fadeVariants = {
-  hidden: {
-    opacity: 1,
-    transform: 'scale(0)',
-  },
-  visible: {
-    opacity: 0,
-    transform: 'scale(1)',
-  },
- 
-};
-
-// content sutitle defines the color of the circle
-// if content subtitle = "red" then current color is #ff0000
-
-
- 
-
-
-
+  const fadeVariants = {
+    hidden: {
+      opacity: 1,
+      transform: 'scale(0)',
+    },
+    visible: {
+      opacity: 0,
+      transform: 'scale(1)',
+    },
+  };
 
   return (
         <>
@@ -56,7 +39,6 @@ const fadeVariants = {
             }}
           >
             <div className="absolute top-[15px] left-[400px] w-[1500px]  text-[35px]   font-light flex items-center  max-h-[50px] ">
-
               <IoLeafOutline className="inline-block mr-2 stroke-custom" />
               <span className="font-bold mr-2">
                 {content?.title ? renderHTML(content.title) : "Energiewetter für Wuppertal" }
@@ -127,12 +109,12 @@ const fadeVariants = {
           }}
           className="absolute  left-[400px] top-[70px]  leading-tight ">
           
-          <h2 className="text-[110px] leading-[180px] tracking-tighter  font-light w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block  ">
-          {content?.content.label.plural} Phase
+          <h2 className="text-[110px] leading-[180px] tracking-tighter  font-light w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block capitalize ">
+            {content?.content.label.plural} Phase - {content?.content.emissions.amount}  <span className="font-light">{content?.content.emissions.unit}</span>
           </h2>
 
           <p className="text-[35px] font-light tracking-tight line-clamp-2  w-[1400px] ">
-            <p>Emissionen: {content?.content.emissions.amount}  <span className="font-light">{content?.content.emissions.unit}</span></p>
+            <p>{content?.text}</p>
           </p>
         </motion.div> 
       </>
