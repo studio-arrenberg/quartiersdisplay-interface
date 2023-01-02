@@ -1,5 +1,4 @@
 import { createElement } from "react";
-import Image from "next/image";
 
 export default function Umfragen({ content }) {
   const renderHTML = (rawHTML) =>

@@ -5,11 +5,9 @@ import { motion, AnimatePresence } from "framer-motion"
 import Header from "../../ui/header";
 import ImageContainer from "../../ui/image";
 
-
-
 require("dayjs/locale/de"); // get locale data
 
-export default function Veranstaltungen({  slideDuration, content, state}) {
+export default function Veranstaltungen({ slideDuration, content, state}) {
 
   dayjs.locale("de");
 

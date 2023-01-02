@@ -4,9 +4,8 @@ import React from "react";
 import Switch from "./switch";
 import TimingBar from "../ui/timingbar";
 
-
 export default function Content({ content, meta, mutate }) {
-  const slideDuration = meta.slide_duration;
+  const slideDuration = meta.slide_duration ? meta.slide_duration : 10000;
   const [contentIndex, setContentIndex] = useState(0);
 
   // add class "dark" to <html> element
