@@ -1,15 +1,7 @@
 import { createElement, useState, useEffect, useRef } from "react";
 import React from "react";
-import Image from "next/image";
-import * as dayjs from "dayjs";
 import { motion, AnimatePresence } from "framer-motion"
-import useCountdown from "@bradgarropy/use-countdown"
-import Router from "next/router";
-import TimingBar from "../../ui/timingbar";
-import Header from "../../ui/header";
 import ImageContainer from "../../ui/image";
-
-
 
 export default function Info({ content, state }) {
   const renderHTML = (rawHTML) =>

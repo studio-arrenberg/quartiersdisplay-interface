@@ -1,14 +1,10 @@
 import { createElement } from "react";
 import { motion } from "framer-motion";
 import { IoMegaphoneOutline, IoCalendarOutline, IoChatbubbleOutline, IoHeartOutline  } from "react-icons/io5";
+import React from "react";
+import Emoji from "react-apple-emojis";
 
-import Emoji from 'react-emojis';
-
-
-const renderHTML = (rawHTML) =>
-    createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML } });
-
-
+const renderHTML = (rawHTML) => createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML } });
 
 export default function Header({contentType, content}) {
 
@@ -94,16 +90,12 @@ export default function Header({contentType, content}) {
                 )}
 
 
-        
-            
                 <span>von {content?.title && renderHTML(content.author)}</span>
                 <div className="font-bold ml-auto max-w-[660px] overflow-hidden text-ellipsis">
-                
-                    {content?.project && renderHTML(content.project)}  
-
-                    {emojiName && <Emoji emoji={emojiName} size="40"/>}
-                    
+                    {content?.project && renderHTML(content.project)}
+                    {/* {emojiName && <Emoji name={emojiName} width={38} />} */}
                 </div>
+                {emojiName && <Emoji name={emojiName} width={38} />}
             </div>
         </motion.div>
             

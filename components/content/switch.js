@@ -9,11 +9,6 @@ import Info from "./slides/info";
 
 export default function Switch({ content, contentIndex, state, index }) {
 
-  const renderHTML = (rawHTML) =>
-    createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML } 
-  });
-  
-
   return (
     <>
     {/* <div className="">
@@ -49,7 +44,5 @@ export default function Switch({ content, contentIndex, state, index }) {
       })()
     )}
   </>
-
-      
   );
 }
