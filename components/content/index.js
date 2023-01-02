@@ -6,7 +6,7 @@ import TimingBar from "../ui/timingbar";
 
 
 export default function Content({ content, meta, mutate }) {
-  const slideDuration = 2000000;
+  const slideDuration = meta.slide_duration;
   const [contentIndex, setContentIndex] = useState(0);
 
   // add class "dark" to <html> element

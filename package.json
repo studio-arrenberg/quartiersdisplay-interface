@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@bradgarropy/use-countdown": "^1.5.2",
     "dayjs": "^1.11.5",
     "emoji-dictionary": "^1.0.11",
     "framer-motion": "^7.3.5",
@@ -18,7 +17,6 @@
     "react": "18.2.0",
     "react-apple-emojis": "1.1.1",
     "react-dom": "18.2.0",
-    "react-emojis": "^1.0.6",
     "react-icons": "^4.7.1",
     "swr": "1.1.2"
   },
