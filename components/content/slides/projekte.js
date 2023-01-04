@@ -11,7 +11,6 @@ export default function Projekte({ content, state }) {
   return (
     <>
       <Header contentType="Mach mit beim Projekt" content={content} state={state} />
-      {/* <TimingBar  /> */}
       <ImageContainer content={content}>
 
       </ImageContainer>

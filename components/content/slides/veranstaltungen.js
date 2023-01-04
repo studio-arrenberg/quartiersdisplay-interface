@@ -30,11 +30,11 @@ export default function Veranstaltungen({ slideDuration, content, state}) {
             <h2 className=" pt-[30px]  text-[35px]  font-bold tracking-tight">
               {eventWeekday}
             </h2>
-            <h2 className=" pt-[15px]  text-[150px] leading-[130px] font-bold tracking-tight whitespace-nowrap overflow-ellipsis overflow-hidden">
+            <h2 className=" pt-[15px]  text-[150px] leading-[130px] font-bold tracking-tighter whitespace-nowrap overflow-ellipsis overflow-hidden">
               {eventDate}
             </h2>
             <span className=" text-[35px] leading-[3cm]  tracking-tight">
-              {content.event_time}
+              {content.event_time} Uhr
             </span>
           </div>
         </ImageContainer>

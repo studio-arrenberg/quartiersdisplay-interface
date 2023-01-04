@@ -5,7 +5,8 @@ import Switch from "./switch";
 import TimingBar from "../ui/timingbar";
 
 export default function Content({ content, meta, mutate }) {
-  const slideDuration = meta.slide_duration ? meta.slide_duration : 10000;
+  const slideDuration = meta.slide_duration ? meta.slide_duration : 20000;
+  // const slideDuration = 20000;
   const [contentIndex, setContentIndex] = useState(0);
 
   // add class "dark" to <html> element
@@ -31,7 +32,7 @@ export default function Content({ content, meta, mutate }) {
 
   return (
     <div>
-      <TimingBar  />
+      <TimingBar slideDuration={slideDuration}  />
       {content.map((content, index) =>  (
         <div key={index}>
           <Switch  content={content} contentIndex={contentIndex} index={index} state={index == contentIndex ? true : false } />

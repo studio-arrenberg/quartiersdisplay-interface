@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { IoMegaphoneOutline, IoCalendarOutline, IoChatbubbleOutline, IoHeartOutline  } from "react-icons/io5";
 import React from "react";
 import Emoji from "react-apple-emojis";
+import Umfragen from "../content/slides/umfragen";
 
 const renderHTML = (rawHTML) => createElement("span", { dangerouslySetInnerHTML: { __html: rawHTML } });
 
@@ -63,7 +64,10 @@ export default function Header({contentType, content}) {
                 ease: "easeInOut",
             }}
         >
-            <div className="absolute top-[15px] left-[400px] w-[1500px]  text-[35px]   font-light flex items-center  max-h-[50px] ">
+            
+            <div className={`absolute top-[20px]  w-[1500px]  text-[35px]   font-light flex items-center  max-h-[50px]`}
+            style={{left: content.type === "umfragen" ? "40px" : "400px"}}>
+
                 {content.type === "nachrichten" && (
                     <>
                         <IoMegaphoneOutline className="inline-block mr-2 stroke-custom" />
@@ -85,17 +89,22 @@ export default function Header({contentType, content}) {
                 {content.type === "umfragen" && (
                     <>
                         <IoChatbubbleOutline className="inline-block mr-2 stroke-custom" />
-                        <span className="font-bold mr-2">Veranstaltung</span> 
+                        <span className="font-bold mr-2">Umfrage</span> 
                     </>
                 )}
 
 
-                <span>von {content?.title && renderHTML(content.author)}</span>
-                <div className="font-bold ml-auto max-w-[660px] overflow-hidden text-ellipsis">
-                    {content?.project && renderHTML(content.project)}
-                    {/* {emojiName && <Emoji name={emojiName} width={38} />} */}
-                </div>
-                {emojiName && <Emoji name={emojiName} width={38} />}
+
+             {/* if content  type is not umfragen and not projekte show */}
+                {content.type !== "umfragen" && content.type !== "projekte" && (
+                    <>
+                        <span>von {content?.title && renderHTML(content.author)}</span>
+                        <div className="font-bold ml-auto max-w-[660px] overflow-hidden text-ellipsis">
+                            {content?.project && renderHTML(content.project)}
+                        </div>
+                        {emojiName && <Emoji name={emojiName} width={38} />}
+                    </>
+                )}
             </div>
         </motion.div>
             

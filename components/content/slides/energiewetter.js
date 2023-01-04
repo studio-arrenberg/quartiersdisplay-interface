@@ -28,6 +28,7 @@ export default function Energiewetter({  slideDuration, content }) {
 
   return (
         <>
+        
           <motion.div
             animate={{
                 y: [-100, 0, 0, -100],
@@ -44,11 +45,21 @@ export default function Energiewetter({  slideDuration, content }) {
                 {content?.title ? renderHTML(content.title) : "Energiewetter für Wuppertal" }
                </span> 
             </div>
-        </motion.div>
+          </motion.div>
 
 
         {/* Ampel */}
         <div>
+        <motion.div
+            animate={{
+                opacity: [0, 1, 1, 0],
+            }}
+            transition={{
+                times: [0, 0.05, 0.95, 1],
+                duration: 20,
+                ease: "easeInOut",
+            }}
+          >
             <motion.div
               variants={fadeVariants}
               initial="hidden"
@@ -96,6 +107,8 @@ export default function Energiewetter({  slideDuration, content }) {
                 background: content.subtitle
               }}
             />
+
+          </motion.div>
         </div>
 
         <motion.div
@@ -109,12 +122,12 @@ export default function Energiewetter({  slideDuration, content }) {
           }}
           className="absolute  left-[400px] top-[70px]  leading-tight ">
           
-          <h2 className="text-[110px] leading-[180px] tracking-tighter  font-light w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block capitalize ">
+          <h2 className="text-[110px] leading-[180px] tracking-tighter  font-light w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block capitalize   ">
             {content?.content.label.plural} Phase - {content?.content.emissions.amount}  <span className="font-light">{content?.content.emissions.unit}</span>
           </h2>
 
           <p className="text-[35px] font-light tracking-tight line-clamp-2  w-[1400px] ">
-            <p>{content?.text}</p>
+            {content?.text}
           </p>
         </motion.div> 
       </>
