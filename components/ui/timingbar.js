@@ -4,7 +4,7 @@ export default function TimingBar({state}) {
 
     return (
       <>
-        <div className="absolute top-[0px] h-[10px] w-full  bg-blue-500/30 " />
+        <div className="absolute top-[0px] h-[10px] w-full  bg-blue-500/30 z-10" />
           <motion.div
             animate={{ 
               translateX: ["-100%", "100%"],

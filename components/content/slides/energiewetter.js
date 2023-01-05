@@ -122,8 +122,8 @@ export default function Energiewetter({  slideDuration, content }) {
           }}
           className="absolute  left-[400px] top-[70px]  leading-tight ">
           
-          <h2 className="text-[110px] leading-[180px] tracking-tighter  font-light w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block capitalize   ">
-            {content?.content.label.plural} Phase - {content?.content.emissions.amount}  <span className="font-light">{content?.content.emissions.unit}</span>
+          <h2 className="text-[110px] leading-[180px] tracking-tighter  font-light w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block    ">
+            <span className="capitalize">{content?.content.label.plural}</span> Phase - {content?.content.emissions.amount}<span className="font-light">{content?.content.emissions.unit}</span>
           </h2>
 
           <p className="text-[35px] font-light tracking-tight line-clamp-2  w-[1400px] ">

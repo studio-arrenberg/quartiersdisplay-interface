@@ -30,9 +30,7 @@ export default function Umfragen({ content }) {
           </h2>
 
           <div id="pol" className=" shrink-0 flex gap-14">
-
             {content?.poll?.map((poll, i) => (
-              <>
                 <div key={i} className="flex flex-col items-center">
                     {/* animated pol bar */}
                   <div className="relative w-[100px] h-[190px]  rounded-lg">
@@ -56,11 +54,10 @@ export default function Umfragen({ content }) {
                   </p>
                   <div className="flex">
                     <p className="text-[20px]  tracking-tighter whitespace-nowrap  overflow-ellipsis overflow-hidden  block  ">
-                      {poll.votes} Stimmen • {poll.percentage}%
+                      {poll.votes} Stimmen • {Math.round(poll.percentage)}%
                     </p>
                   </div>
                 </div>
-              </>
             ))}
           </div>
         </div>

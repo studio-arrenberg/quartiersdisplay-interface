@@ -21,7 +21,7 @@ export default function ImageContainer({ content, children}) {
 
         {/* Hintergrundbild */}
         <div className="absolute top-0 left-0 w-full h-full bg-black">
-          {content?.image ? (
+        {content?.image  ? (
             <motion.div
               animate={{ 
                 scale: [1, 1.5]
@@ -34,14 +34,14 @@ export default function ImageContainer({ content, children}) {
             >
               <Image src={content.image} objectFit="cover" layout="fill" className=" " alt=" " />
             </motion.div>
-          ) : (
-            <div className="absolute top-0 left-0 w-full h-full bg-blue-900/50 text-white flex justify-center items-center text-[150px]">
-              {content.type === "nachrichten" && (<IoMegaphoneOutline className="inline-block stroke-custom" />)}
-              {content.type === "projekte" && (<IoHeartOutline className="inline-block stroke-custom " />)}
-              {content.type === "veranstaltungen" && (<IoCalendarOutline className="inline-block stroke-custom" />)}
-              {content.type === "umfragen" && (<IoChatbubbleOutline className="inline-block stroke-custom" />)}
-            </div>
-          )
+          ) : 
+            content.type !== "veranstaltungen"  && (
+              <div className="absolute top-0 left-0 w-full h-full bg-blue-900/50 z-10 text-white fill-white flex justify-center items-center text-[150px]">
+                {content.type === "nachrichten" && (<IoMegaphoneOutline className="inline-block stroke-custom" />)}
+                {content.type === "projekte" && (<IoHeartOutline className="inline-block stroke-custom " />)}
+                {content.type === "umfragen" && (<IoChatbubbleOutline className="inline-block stroke-custom" />)}
+              </div>
+            )
         }
         </div>
 
