@@ -14,33 +14,35 @@ export default function Info({ content, state }) {
       {content?.id == "quartiersplattform" ? (
       <>
         <motion.div
-            animate={{ 
-              y: [-300, 0, 0, -300] 
-            }}
-            transition={{ 
-              delay: 0,
-              duration: 20,
-              times: [0, 0.1, 0.9, 1],
-            }}
-            className="absolute w-full top-[45px]  leading-tight text-center">
-              <p className="text-[35px]">{content?.subtitle}</p>
-              <h2 className="text-[75px]  tracking-tighter   whitespace-nowrap  overflow-ellipsis overflow-hidden  block  ">
-              {content?.title}
-              </h2>
-          </motion.div> 
-
+          initial={{ y: 100 }}
+          animate={{ y: 0}}
+          exit={{ y: 100 }}
+          transition={{
+            y: { 
+                ease: "easeOut",
+                duration: 0.5
+            }
+          }}
+          className="absolute w-[1920px] top-[45px]  leading-tight text-center"
+        >
+          <p className="text-[35px]">{content?.subtitle}</p>
+          <h2 className="text-[75px]  tracking-tighter   whitespace-nowrap  overflow-ellipsis overflow-hidden  block  ">
+            {content?.title}
+          </h2>
+        </motion.div> 
 
 
           <motion.div
-            animate={{
-              y: [300, 0, 0, 300],
-            }} 
+            initial={{ y: 100 }}
+            animate={{ y: 0}}
+            exit={{ y: 100 }}
             transition={{
-              delay: 1,
-              duration: 19,
-              times: [0, 0.1, 0.9, 1],
+              y: { 
+                  ease: "easeOut",
+                  duration: 0.5
+              }
             }}
-            className="absolute w-full bottom-[60px]  leading-tight text-center flex justify-center" >
+            className="absolute  w-[1920px]    top-[200px]  leading-tight text-center flex justify-center" >
             <p className="text-[55px] font-light span bg-blue-500 rounded-xl px-6 pt-1.5 pb-2.5">
             www.{content?.link}
             </p>
@@ -50,9 +52,8 @@ export default function Info({ content, state }) {
        ) : 
        <>
 
-        <ImageContainer content={content}>
+        <ImageContainer content={content} />
 
-        </ImageContainer>
       
         <motion.div
           animate={{ 

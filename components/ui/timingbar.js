@@ -1,22 +1,21 @@
 import { motion } from "framer-motion";
 
-export default function TimingBar({state}) {
+export default function TimingBar({slideDurationinSeconds, index}) {
 
     return (
-      <>
-        <div className="absolute top-[0px] h-[10px] w-full  bg-blue-500/30 z-10" />
           <motion.div
+            id={index}
+            key={index}
+            initial={{  translateX: "-100%"}}
             animate={{ 
-              translateX: ["-100%", "100%"],
-              backgroundColor: ["hsl(205,100,40)", "hsl(205,100,50)"],
-            }}
+              translateX: ["-100%", "0%"],
+              }}
             transition={{ 
-              duration: 40, 
+              duration: slideDurationinSeconds, 
               ease: "linear",
-              repeat: Infinity,
             }}
-            className="absolute top-[0px] h-[10px] bg-blue-500 w-full z-20"
+            exit={{ opacity: 0}}
+            className="absolute top-[0px] h-[10px] w-full z-20 bg-gradient-to-r from-blue-900 to-blue-500"
           />
-      </> 
     )
 }

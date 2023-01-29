@@ -1,7 +1,8 @@
-import { createElement, useState, useEffect, useRef } from "react";
+import { createElement } from "react";
+import { IoHeartOutline } from "react-icons/io5";
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion"
 import Header from "../../ui/header";
+import Title from "../../ui/title";
 import ImageContainer from "../../ui/image";
 
 export default function Projekte({ content, state }) {
@@ -10,32 +11,14 @@ export default function Projekte({ content, state }) {
 
   return (
     <>
-      <Header contentType="Mach mit beim Projekt" content={content} state={state} />
-      <ImageContainer content={content}>
+      <Header contentType="Mach mit beim Projekt" content={content}>
+         <IoHeartOutline className="inline-block mr-2 stroke-custom" />
+         <span className="font-bold mr-2">Mach mit beim Projekt</span> 
+      </Header>
 
-      </ImageContainer>
-    
-      {/*  Event title */}
-      <motion.div
-        animate={{ 
-          y: [300, 0, 0, 300] 
-        }}
-        transition={{ 
-          delay: 1,
-          duration: 19,
-          times: [0, 0.1, 0.9, 1],
-        }}
-        className="absolute  top-[70px] left-[400px] leading-tight ">
-        
-        <h2 className="text-[150px] leading-[180px] tracking-tighter  font-light w-[1500px] whitespace-nowrap  overflow-ellipsis overflow-hidden  block  ">
-          {content?.title && renderHTML(content.title)}
-        </h2>
+      <Title content={content} slideDurationinSeconds={slideDurationinSeconds} />
 
-        <p className="text-[35px] font-light tracking-tight line-clamp-2  w-[1400px] ">
-          {content?.subtitle && renderHTML(content.subtitle)}
-          {!content?.subtitle && content?.text && renderHTML(content.text)}
-        </p>
-      </motion.div> 
+      <ImageContainer content={content} />
     </>
   );
 }

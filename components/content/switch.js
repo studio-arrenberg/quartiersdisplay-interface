@@ -7,42 +7,30 @@ import Default from "./slides/default";
 import Energiewetter from "./slides/energiewetter";
 import Info from "./slides/info";
 
-export default function Switch({ content, contentIndex, state, index }) {
+export default function Switch({ content, slideDurationinSeconds, index }) {
 
-  return (
-    <>
-    {/* <div className="">
-      {" Index:" + index}
-      {state == true ? "true" : "false"}
-      {content.type}
-    </div> */}
 
-    {state && (
-      (() => { 
-        switch (content?.type) {
+    { switch (content?.type) {
       case "veranstaltungen":
-        return <Veranstaltungen content={content} state={state} />;
+        return <Veranstaltungen content={content} index={index} slideDurationinSeconds={slideDurationinSeconds} />;
         break;
       case "nachrichten":
-        return <Nachrichten content={content} state={state} />;
+        return <Nachrichten content={content} index={index} slideDurationinSeconds={slideDurationinSeconds} />;
         break;
       case "umfragen":
-        return <Umfragen content={content} state={state} />;
+        return <Umfragen content={content} index={index} slideDurationinSeconds={slideDurationinSeconds} />;
         break;
       case "projekte":
-        return <Projekte content={content} state={state} />;
+        return <Projekte content={content} index={index} slideDurationinSeconds={slideDurationinSeconds} />;
         break;
       case "energie_wetter":
-        return <Energiewetter content={content} state={state} />;
+        return <Energiewetter content={content} index={index} slideDurationinSeconds={slideDurationinSeconds} />;
         break;
       case "info":
-        return <Info content={content} state={state} />;
+        return <Info content={content} index={index} slideDurationinSeconds={slideDurationinSeconds} />;
         break;
       default:
-        return <Default content={content} state={state} />;
+        return <Default content={content} index={index} slideDurationinSeconds={slideDurationinSeconds} />;
         break;}
-      })()
-    )}
-  </>
-  );
+      }
 }

@@ -2,26 +2,24 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { IoMegaphoneOutline, IoCalendarOutline, IoChatbubbleOutline, IoHeartOutline  } from "react-icons/io5";
 
-
-export default function ImageContainer({ content, children}) {
-
+export default function ImageContainer({ content, children, index}) {
     return (
-
       <motion.div
-        animate={{ 
-          x: [-360, 0, 0, -360]
-        }}
-        transition={{ 
-          delay: 1,
-          duration: 19, 
-          times: [0, 0.05, 0.95, 1],
+        key={index}
+        initial={{ x:-350 }}
+        animate={{ x: 0}}
+        exit={{ x: -350 }}
+        transition={{
+            x: { 
+                duration: 0.5,
+            }
         }}
         className="absolute left-0 top-[10px] w-[350px] h-[350px] text-center text-white overflow-hidden"
       >
 
         {/* Hintergrundbild */}
         <div className="absolute top-0 left-0 w-full h-full bg-black">
-        {content?.image  ? (
+          {content?.image  ? (
             <motion.div
               animate={{ 
                 scale: [1, 1.5]
@@ -32,7 +30,15 @@ export default function ImageContainer({ content, children}) {
               }}
               className="absolute left-0 top-[5px] w-[355px] h-[355px] text-center text-white "
             >
-              <Image src={content.image} objectFit="cover" layout="fill" className=" " alt=" " />
+              <Image 
+                src={content.image}  
+                fill="fill" 
+                style={{objectFit: "cover"}}  
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                33vw" 
+                quality="20" 
+                alt=""  />
             </motion.div>
           ) : 
             content.type !== "veranstaltungen"  && (
@@ -42,7 +48,7 @@ export default function ImageContainer({ content, children}) {
                 {content.type === "umfragen" && (<IoChatbubbleOutline className="inline-block stroke-custom" />)}
               </div>
             )
-        }
+          }
         </div>
 
         {!content?.image && ( 
