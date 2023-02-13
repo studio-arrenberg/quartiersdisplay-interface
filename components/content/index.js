@@ -10,8 +10,7 @@ export default function Content({ content, meta, mutate }) {
   const [contentIndex, setContentIndex] = useState(0);
 
   // add class "dark" to <html> element
-  document.documentElement.classList.add("dark");
-
+  if (typeof document !== "undefined") document.documentElement.classList.add("dark");
 
   if (contentIndex > content.length - 1 || contentIndex < 0) {
     setContentIndex(0);

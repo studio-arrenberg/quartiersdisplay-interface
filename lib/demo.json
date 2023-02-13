@@ -1,0 +1,40 @@
+{
+    "meta": {
+        "name": "Demo",
+        "slide_duration": 20000,
+        "demo": true
+    },
+    "content": [
+        {
+            "id": 1,
+            "title": "Demo",
+            "subtitle": "Demo",
+            "content": "",
+            "date": "2023-02-13 11:50:19",
+            "image": "http://localhost:3000/demo/images/001.png",
+            "type": "nachrichten",
+            "author": "studio arrenberg",
+            "project": "Projekt",
+            "text": "Das ist eine demo für das digitale Straßenschild",
+            "emoji": "👋",
+            "poll": null
+        },
+        {
+            "id": 1,
+            "title": "Veranstaltung",
+            "subtitle": "",
+            "content": "",
+            "date": "2023-02-15 15:00:00",
+            "image": "http://localhost:3000/demo/images/001.png",
+            "type": "veranstaltungen",
+            "author": "studio arrenberg",
+            "project": "Projekt",
+            "event_date": "2023-02-15",
+            "event_time": "15:00",
+            "event_end_time": "18:00",
+            "text": "Das ist eine demo für das digitale Straßenschild",
+            "emoji": "👋",
+            "poll": null
+        }
+    ]
+}
