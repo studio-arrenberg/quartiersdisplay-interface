@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import useSWRImmutable from 'swr/immutable'
 import Content from "/components/content/index.js";
 import Fallback from "/components/fallback";
@@ -17,6 +18,13 @@ export default function Home() {
   });
 
   console.log("data", data);
+
+  useEffect(() => {
+    // force reload page
+    setTimeout(() => {
+      window.location.reload(); 
+    }, 1000 * 60 * 8); // every 8 hours
+  })
 
   if (!data) return <Wrapper><Fallback title="Loading" message="Daten werden geladen" /></Wrapper>;
 
