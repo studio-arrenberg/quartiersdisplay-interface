@@ -11,7 +11,7 @@
             "subtitle": "Projekte, Nachrichten, Veranstaltungen und Umfragen von deinen Nachbarn",
             "content": "",
             "date": "2023-02-13 11:50:19",
-            "image": "http://localhost:3001/fallback/images/107.png",
+            "image": "http://localhost:3000/fallback/images/107.png",
             "type": "nachrichten",
             "author": "studio arrenberg",
             "project": "Quartiersdisplay",
