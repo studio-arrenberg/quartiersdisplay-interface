@@ -6,7 +6,6 @@ import TimingBar from "../ui/timingbar";
 
 export default function Content({ content, meta, mutate }) {
   const slideDuration = meta.slide_duration ? meta.slide_duration : 20000;
-  // const slideDuration = 20000;
   const [contentIndex, setContentIndex] = useState(0);
 
   // add class "dark" to <html> element
@@ -15,19 +14,20 @@ export default function Content({ content, meta, mutate }) {
   if (contentIndex > content.length - 1 || contentIndex < 0) {
     setContentIndex(0);
     mutate();
-  }
+  } 
 
   useEffect(() => {
-    console. log("useEffect");
     let id = setInterval(
-      () => {setContentIndex(contentIndex => contentIndex + 1)},
+      () => {
+        setContentIndex(contentIndex => contentIndex + 1);
+      },
       slideDuration);
 
-      // clear on component unmount
-      return () => {
-        clearInterval(id);
-      };
-    }, []);
+    // clear on component unmount
+    return () => {
+      clearInterval(id);
+    };
+  }, []);
 
   return (
     <div>

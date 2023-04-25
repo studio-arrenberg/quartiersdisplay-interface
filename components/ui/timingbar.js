@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
-export default function TimingBar({state}) {
-
+export default function TimingBar({slideDuration}) {
+    console.log("slideDuration",slideDuration, (slideDuration / 1000))
     return (
       <>
         <div className="absolute top-[0px] h-[10px] w-full  bg-blue-500/30 z-10" />
@@ -11,7 +11,7 @@ export default function TimingBar({state}) {
               backgroundColor: ["hsl(205,100,40)", "hsl(205,100,50)"],
             }}
             transition={{ 
-              duration: 40, 
+              duration: (slideDuration / 1000) * 2, 
               ease: "linear",
               repeat: Infinity,
             }}

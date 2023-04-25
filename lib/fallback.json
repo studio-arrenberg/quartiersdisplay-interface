@@ -1,0 +1,23 @@
+{
+    "meta": {
+        "name": "Demo",
+        "slide_duration": 10000,
+        "demo": true
+    },
+    "content": [
+        {
+            "id": 1,
+            "title": "Digitale Straßenschilder",
+            "subtitle": "Projekte, Nachrichten, Veranstaltungen und Umfragen von deinen Nachbarn",
+            "content": "",
+            "date": "2023-02-13 11:50:19",
+            "image": "http://localhost:3001/fallback/images/107.png",
+            "type": "nachrichten",
+            "author": "studio arrenberg",
+            "project": "Quartiersdisplay",
+            "text": "Entwickelt und Produziert in Wuppertal von studio arrenberg",
+            "emoji": "🚏",
+            "poll": null
+        }
+    ]
+}
